@@ -1,0 +1,6 @@
+/* app/javascript/stylesheets/application.tailwind.css */
+
+/* Importar la configuración de Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

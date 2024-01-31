@@ -1,0 +1,93 @@
+- if @articles.present?
+  h2 All Articles
+  ul
+    - @articles.each do |article|
+      li
+        h3= article.title
+        p= article.content
+
+- if params[:article].present?
+  - @article = Article.find(params[:article])
+  h2 New Article
+  p= @article.title
+  p= @article.content
+
+json @articles
+
+
+
+/ .flex.flex-col.w-1/5
+/   .flex-col.bg-blue-300.py-4
+/     h1 Bienvenida
+/   .flex-col.bg-red-200
+/     - if params[:article].present?
+/       - @article = Article.find(params[:article])
+/       h2 New Article
+/       p= @article.title
+/       p= @article.content
+/   .flex-col.bg-blue-200
+/     json @article
+
+/ .pb-2
+/   h1.font-extrabold.text-blue-500 Hola Mundo
+/ .bg-gray-200[class="md:flex"]
+/   .mr-3.border-box.fixed.right-0.mt-4.top-0
+/     button#hide-sb.text-lg.text-gray-600
+/       i.fas.fa-angle-double-right
+/   .order-2.overflow-auto.pr-4.top-0[class=%w(md:h-screen md:sticky)]
+/     .px-2.pt-4.pb-2.mb-8.ml-4.flex.w-full
+/       .mr-6.flex-grow
+/         a.text-lg.text-gray-800
+/           i.fas.fa-home.fa-lg
+/       .mr-12.border-box
+/         a.text-lg.text-gray-800
+/           i.fas.fa-user-cog.mr-1
+/     .px-4.pb-2.border-box.mx-2.mb-1
+/       h1.text-2xl.mb-1.pb-0.border-b.border-gray-600
+/         | knb's Card box
+/       .text-sm.text-gray-600
+/         | Card stock for every data...may be.
+/     .px-6.border-box.mt-4.flex.flex-row
+/       button.border.border-gray-500.mx-2.px-1.bg-gray-100.rounded-lg.text-xl
+/         i.fas.fa-plus-circle
+/       input.appearance-none.border.border-gray-500.rounded.py-1.px-2.w-48.text-gray-800.leading-tight.bg-gray-100[class="focus:outline-none focus:border-gray-700 focus:bg-white" id="search" type="text"]
+/       button.px-2.text-xl
+/         i.fas.fa-search
+/       button.text-xl
+/         i.fas.fa-times
+/     .px-6.border-box.mt-4
+/       ul.list-reset.flex.border-b.border-gray-500
+/         li.ml-2.mr-1.py-1.border-l.border-t.border-r.rounded-t-lg.border-gray-600.bg-gray-300
+/           a.text-sm.px-1.text-gray-600.font-semibold[href="#" class="hover:text-gray-800"]
+/             | Open
+/         li.py-1.px-1.border-l.border-t.border-r.rounded-t-lg.border-gray-600.bg-gray-200[class="-mb-px"]
+/           a.text-sm.px-1.inline-block.text-gray-700.font-semibold[href="#"]
+/             | Recent
+/     .px-6.border-box.mt-4
+/       .m-2.text-gray-500
+/         | title 1
+/       .m-2.text-gray-500
+/         | title 2
+/       / - 25.times do |i|
+/       /  .m-2.text-gray-500
+/       /    | title #{i}
+/       .m-2.text-gray-500
+/         button.bg-gray-100.text-gray-800.text-sm.py-1.px-2.border.border-gray-500.rounded.shadow[class="hover:bg-gray-200"]
+/           | close all
+/   .flex-grow.order-1[class="w-2/3"]
+/     .m-4.border-box
+/       .flex.flex-col
+/         - 10.times do
+/           .mx-4.my-4.shadow-md.bg-gray-100.flex.flex-col.w-full
+/             .mx-2.mt-2.mb-1.w-full
+/               h2.text-2xl.text-gray-800 Title
+/             .w-full.mb-2
+/               span.pl-4.text-sm.texg-gray-400
+/                 | 2020/ 4/ 12
+/               span.pl-4.text-sm.texg-gray-400
+/                 | tag1  tag2
+/             .m-2.w-full
+/               p
+/                 - 4.times do
+/                   | contents
+/                   br

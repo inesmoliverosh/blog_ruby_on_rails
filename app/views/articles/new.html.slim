@@ -1,0 +1,11 @@
+= form_with(model: @article, local: true) do |form|
+  .my-2
+    = form.label :title
+    = form.text_field :title
+  .my-2
+    = form.label :title
+    = form.rich_text_area :content    
+  .mt-2
+   	= form.submit class: "bg-blue-500 text-white py-2 px-4"
+
+
